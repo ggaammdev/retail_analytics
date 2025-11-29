@@ -1,0 +1,18 @@
+# Data
+data/
+!data/.keep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Spark
+derby.log
+metastore_db/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
