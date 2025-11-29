@@ -28,6 +28,9 @@ The `prepare_data.py` script uses PySpark to:
 
 ### 3. Analysis
 The `retail_analytics.ipynb` notebook uses PySpark to answer business questions based on the processed data.
+- **Weekly Sales**: Customer purchase trends.
+- **Classification**: Fast/Medium/Slow items and stores.
+- **Promotion Impact**: Analysis of sales lift during promotions and comparison across Fast/Slow entities.
 
 ## How to Run
 
