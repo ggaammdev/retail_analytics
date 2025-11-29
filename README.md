@@ -18,6 +18,9 @@ Synthetic data is generated using `pandas` and `faker`-like logic (random select
 - **Products**: 50 items across 5 categories.
 - **Shops**: 5 store locations.
 - **Transactions**: 500 transactions with nested cart items (product_id, price).
+    - **Sales**: Regular purchase transactions.
+    - **Returns**: ~10% of transactions are generated as returns (negative prices), allowing for net sales analysis.
+    - **Promotions**: A `promotions` dataset is generated. Transactions occurring during promotion periods automatically reflect discounted prices.
 
 ### 2. ETL (Data Preparation)
 The `prepare_data.py` script uses PySpark to:
