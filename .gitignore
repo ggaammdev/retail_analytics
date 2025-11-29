@@ -1,6 +1,5 @@
 # Data
-data/
-!data/.keep
+# data/
 
 # Python
 __pycache__/
