@@ -10,7 +10,7 @@ NUM_CUSTOMERS = 100
 NUM_PRODUCTS = 50
 NUM_SHOPS = 5
 NUM_TRANSACTIONS = 500
-DATA_DIR = 'data'
+DATA_DIR = '../data'
 
 os.makedirs(DATA_DIR, exist_ok=True)
 

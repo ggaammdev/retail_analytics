@@ -4,8 +4,8 @@ This project implements a retail analytics pipeline using **PySpark**. It genera
 
 ## Project Structure
 
-- **`generate_data.py`**: Python script to generate synthetic data for Customers, Products, Shops, and Transactions.
-- **`prepare_data.py`**: PySpark ETL script. It reads the raw CSV/JSONL data, joins the tables, cleans the data, and saves the result as Parquet files in `data/processed_transactions`.
+- **`etl/generate_data.py`**: Python script to generate synthetic data for Customers, Products, Shops, and Transactions.
+- **`etl/prepare_data.py`**: PySpark ETL script. It reads the raw CSV/JSONL data, joins the tables, cleans the data, and saves the result as Parquet files in `data/processed_transactions`.
 - **`retail_analytics.ipynb`**: Jupyter Notebook containing the core analysis. It loads the processed Parquet data and answers business questions.
 - **`verify_notebook.py`**: A standalone Python script to verify the logic of the notebook without launching Jupyter.
 - **`data/`**: Directory containing generated raw data and the `processed_transactions` Parquet folder.
@@ -33,11 +33,15 @@ The `retail_analytics.ipynb` notebook uses PySpark to answer business questions 
 
 1.  **Generate Data**:
     ```bash
+    cd etl
     python3 generate_data.py
+    cd ..
     ```
 2.  **Run ETL**:
     ```bash
+    cd etl
     python3 prepare_data.py
+    cd ..
     ```
 3.  **Run Analysis**:
     Open `retail_analytics.ipynb` in Jupyter/VS Code, or run the verification script:

@@ -8,7 +8,7 @@ print("Initializing Spark Session...")
 spark = SparkSession.builder.appName("RetailAnalyticsETL").getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
 
-DATA_DIR = 'data'
+DATA_DIR = '../data'
 PROCESSED_DIR = os.path.join(DATA_DIR, 'processed_transactions')
 
 # 1. Load Data
