@@ -37,7 +37,12 @@ The `retail_analytics.ipynb` notebook uses PySpark to answer business questions 
 
 ## How to Run
 
-1.  **Generate Data**:
+1.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2.  **Generate Data**:
     ```bash
     cd etl
     python3 generate_data.py
