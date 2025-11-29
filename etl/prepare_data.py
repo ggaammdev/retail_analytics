@@ -17,6 +17,7 @@ print("Loading raw data...")
 df_customers = spark.read.csv(os.path.join(DATA_DIR, 'customers.csv'), header=True, inferSchema=True)
 df_products = spark.read.csv(os.path.join(DATA_DIR, 'products.csv'), header=True, inferSchema=True)
 df_shops = spark.read.csv(os.path.join(DATA_DIR, 'shops.csv'), header=True, inferSchema=True)
+df_promotions = spark.read.csv(os.path.join(DATA_DIR, 'promotions.csv'), header=True, inferSchema=True)
 
 # Rename columns
 df_customers = df_customers.withColumnRenamed("name", "customer_name")
@@ -74,5 +75,12 @@ if os.path.exists(PROCESSED_DIR):
     shutil.rmtree(PROCESSED_DIR)
 
 df_final.write.parquet(PROCESSED_DIR)
+
+# Save Promotions to Parquet
+PROMO_PROCESSED_DIR = os.path.join(DATA_DIR, 'processed_promotions')
+print(f"Saving processed promotions to {PROMO_PROCESSED_DIR}...")
+if os.path.exists(PROMO_PROCESSED_DIR):
+    shutil.rmtree(PROMO_PROCESSED_DIR)
+df_promotions.write.parquet(PROMO_PROCESSED_DIR)
 
 print("ETL complete.")
